@@ -17,7 +17,7 @@ let jokesTableVisible = false; // initiée à false car table de blagues caché 
 // Fonction pour obtenir une blague aléatoire
 randomJokeBtn.addEventListener("click", async () => {
   try {
-    const response = await fetch("http://localhost:5007/jokes/random");
+    const response = await fetch("https://carambar-gmqo.onrender.com/jokes/random");
     // response => objet qui contient des informations sur la réponse HTTP reçue du serveur comme le HTTP status (200 pour une requête réussie par ex), les headers, le body (ex : données JSON)
     const data = await response.json();
     // data => objet
@@ -36,7 +36,7 @@ randomJokeBtn.addEventListener("click", async () => {
 lotteryJokeBtn.addEventListener("click", async () => {
   const jokeId = jokeIdInput.value;
   try {
-    const response = await fetch(`http://localhost:5007/jokes/${jokeId}`);
+    const response = await fetch(`https://carambar-gmqo.onrender.com/jokes/${jokeId}`);
     const data = await response.json();
 
     if (data.id) {
@@ -66,7 +66,7 @@ addJokeBtn.addEventListener("click", async () => {
   const joke = { question, answer };
 
   try {
-    const response = await fetch("http://localhost:5007/jokes", {
+    const response = await fetch("https://carambar-gmqo.onrender.com/jokes", {
       method: "POST",
       headers: {
         "Content-Type": "application/json", // indique que le corps de la requête est en format JSON
@@ -92,7 +92,7 @@ async function loadAllJokes() {
       jokesTableVisible = true;
       allJokesBtn.textContent = "Masquer toutes les blagues Carambar";
 
-      const response = await fetch("http://localhost:5007/jokes");
+      const response = await fetch("https://carambar-gmqo.onrender.com/jokes");
       const jokes = await response.json(); // tableau d'objets, ou chaque objet est une blague
 
       allJokesTable.innerHTML = "";
