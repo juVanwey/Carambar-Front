@@ -16,15 +16,22 @@ h2 {
 
 h3 {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 p {
-  font-size: 1rem;
+  font-size: 1.2rem;
+  font-weight: bolder;
   margin-bottom: 10px;
 }
 
+#pEndAllJokes {
+  font-size: 1.5rem;
+}
+
 section {
+  /* background-color: #e10179;
+  color: white; */
   min-height: 70vh;
 }
 
@@ -39,6 +46,7 @@ header {
   width: 100%;
   background-color: #e10179;
   color: white;
+  /* color: black; */
   text-align: center;
   padding: 40px;
   margin-bottom: 40px;
@@ -49,26 +57,30 @@ header {
 }
 
 div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
   margin-bottom: 40px;
-  text-align: center;
 }
 
 button {
-  background-color: #e10179;
-  color: white;
-  padding: 10px 20px;
+  background-color: #fedb27;
+  color: black;
+  padding: 20px 30px;
   border: none;
-  border-radius: 5px;
+  border-radius: 50px;
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  margin-bottom: 20px;
+  /* margin-bottom: 20px; */
 }
 
 button:hover {
   background-color: #fedb27;
   color: black;
+  transform: scale(1.1); /* + grand de 10% */
 }
 
 input {
@@ -100,8 +112,23 @@ footer a:hover {
   text-decoration: underline;
 }
 
+#randomJokeContent,
+#lotteryJokeContent {
+  display: none;
+}
+
+.jokeContent {
+  background-color: #38ace3;
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  padding: 20px;
+  border: none;
+  border-radius: 5px;
+}
+
 table {
-  width: 100%;
+  max-width: 100%;
   border-collapse: collapse;
 }
 th,

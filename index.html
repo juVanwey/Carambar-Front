@@ -1,63 +1,100 @@
-<!DOCTYPE html>
+<!DOCTYPE html> <<!DOCTYPE html>
 <html lang="fr">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Carambar & co - Blagues</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carambar & co - Blagues</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-<body>
+  <body>
+    <header>
+      <h1>Bienvenue chez Carambar & co</h1>
+      <h2>Carambar, c'est de la barre</h2>
+      <!-- <div>
+        <img src="./assets/logo-rose.png" alt="">
+      </div> -->
+    </header>
 
-  <header>
-    <h1>Bienvenue chez Carambar & co</h1>
-    <h2>Carambar, c'est de la barre</h2>
-  </header>
+    <main>
+      <section>
+        <div id="mission">
+          <h2>Notre mission, c'est te donner le sourire !</h2>
+          <p>
+            Eh oui, ici on cultive le plaisir de sourire ! Tu veux un peu de fun
+            au quotidien ? Tu veux pimper tes soirées ? Amuse-toi avec nos
+            blagues !
+          </p>
+          <!-- <div>
+            <img src="./assets/photo-accueil.webp" alt="">
+          </div> -->
+        </div>
 
-  <main>
-    <section>
-  <div id="mission">
-    <h2>Notre mission, c'est te donner le sourire !</h2>
-    <p>Eh oui, ici on cultive le plaisir de sourire ! Tu veux un peu de fun au quotidien ? Tu veux pimper tes soirées ? Amuse-toi avec nos blagues !</p>
-  </div>
+        <div id="randomJoke">
+          <h3>Régale toi en tirant une blague au hasard !</h3>
+          <button id="randomJokeBtn">Tirer une blague aléatoire</button>
+          <p id="randomJokeContent" class="jokeContent">
+            Ici apparaîtra la blague !
+          </p>
+          <!-- Le p sera remplacé par la blague tirée -->
+        </div>
 
-  <div id="random-joke">
-    <h3>Régale toi en tirant une blague au hasard !</h3>
-    <button id="random-joke-btn">Tirer une blague aléatoire</button>
-    <p id="random-joke-text">Ici apparaîtra la blague !</p>
-    <!-- Ce p sera remplacé par la blague tirée -->
-  </div>
+        <div id="lotteryJoke">
+          <h3>Tire une blague selon un nombre, comme au loto !</h3>
+          <input
+            type="number"
+            id="jokeIdInput"
+            placeholder="Entre un nombre ici"
+          />
+          <button id="lotteryJokeBtn">Consulter la blague</button>
+          <p id="lotteryJokeContent" class="jokeContent">
+            Ici apparaîtra la blague !
+          </p>
+        </div>
 
-  <div id="lottery-joke">
-    <h3>Tire une blague selon un nombre, comme au loto !</h3>
-    <input type="number" id="joke-id" placeholder="Entre un nombre ici">
-    <button id="get-joke-btn">Consulter la blague</button>
-    <p id="joke-result">Ici apparaîtra la blague !</p>
-  </div>
+        <div id="addJoke">
+          <h3>
+            Tu veux surprendre la communauté Carambar & co avec une blague ?
+            C'est par ici !
+          </h3>
+          <input
+            type="text"
+            id="jokeQuestionInput"
+            placeholder="Entre ta devinette"
+          />
+          <input
+            type="text"
+            id="jokeAnswerInput"
+            placeholder="Entre la réponse"
+          />
+          <button id="addJokeBtn">Ajouter ma blague</button>
+        </div>
 
-  <div id="add-joke">
-    <h3>Tu veux surprendre la communauté Carambar & co avec une blague ? C'est par ici !</h3>
-    <input type="text" id="joke-question" placeholder="Entre la devinette ou le contenu de la blague">
-    <input type="text" id="joke-answer" placeholder="Entre la réponse si une réponse est attendue">
-    <button id="add-joke-btn">Ajouter ma blague</button>
-  </div>
+        <div id="allJokes">
+          <h3>
+            Un voyage à l'autre bout du monde, plus de connexion... Carambar &
+            co t'accompagne !
+          </h3>
+          <button id="allJokesBtn">
+            Découvrir toutes les blagues Carambar
+          </button>
+          <p id="pEndAllJokes">À emporter partout !</p>
+          <table id="allJokesTable"></table>
+        </div>
+      </section>
+    </main>
 
-  <div id="all-jokes">
-    <h3>Un voyage à l'autre bout du monde, plus de connexion... Carambar & co t'accompagne !</h3>
-    <button id="all-jokes-btn">Découvrir toutes les blagues Carambar</button>
-    <p>À emporter partout !</p>
-    <table id="allJokesTable">
+    <footer>
+      <p>
+        © 2025 Julie V -
+        <a href="https://www.carambarco.com" target="_blank">carambarco.com</a>
+      </p>
+    </footer>
 
-    </table>
-  </div>
-</main>
-</section>
-
-  <footer>
-    <p>© 2025 Julie V - <a href="https://www.carambarco.com" target="_blank">carambarco.com</a></p>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>

@@ -1,52 +1,65 @@
-// boutons et sections
-const randomJokeBtn = document.getElementById("random-joke-btn");
-const randomJokeText = document.getElementById("random-joke-text");
-const getJokeBtn = document.getElementById("get-joke-btn");
-const jokeIdInput = document.getElementById("joke-id");
-const jokeResult = document.getElementById("joke-result");
-const addJokeBtn = document.getElementById("add-joke-btn");
-const jokeQuestionInput = document.getElementById("joke-question");
-const jokeAnswerInput = document.getElementById("joke-answer");
-const allJokesBtn = document.getElementById("all-jokes-btn");
+// Eléments du DOM
+const randomJokeBtn = document.querySelector("#randomJokeBtn");
+const randomJokeContent = document.querySelector("#randomJokeContent");
+const lotteryJokeBtn = document.querySelector("#lotteryJokeBtn");
+const jokeIdInput = document.querySelector("#jokeIdInput");
+const lotteryJokeContent = document.querySelector("#lotteryJokeContent");
+const addJokeBtn = document.querySelector("#addJokeBtn");
+const jokeQuestionInput = document.querySelector("#jokeQuestionInput");
+const jokeAnswerInput = document.querySelector("#jokeAnswerInput");
+const allJokesBtn = document.querySelector("#allJokesBtn");
 const allJokesTable = document.querySelector("#allJokesTable");
-let jokesTableVisible = false;
 
+// Variables
+let jokesTableVisible = false; // initiée à false car table de blagues caché au départ
+
+// GET
 // Fonction pour obtenir une blague aléatoire
 randomJokeBtn.addEventListener("click", async () => {
   try {
     const response = await fetch("http://localhost:5007/jokes/random");
+    // response => objet qui contient des informations sur la réponse HTTP reçue du serveur comme le HTTP status (200 pour une requête réussie par ex), les headers, le body (ex : données JSON)
     const data = await response.json();
-    randomJokeText.textContent = `${data.question} - ${data.answer}`;
+    // data => objet
+    randomJokeContent.textContent = `${data.question} - ${data.answer}`;
+    randomJokeContent.style.display = 'flex';
   } catch (error) {
-    randomJokeText.textContent =
-      "Une erreur est survenue, réessayez plus tard.";
+    randomJokeContent.textContent =
+      "Une erreur est survenue, réessaye plus tard.";
   }
 });
+// la méthode HTTP n'est pas explicitement définie dans l'appel fetch() donc c'est du GET
+// synthaxe de base de fetch : fetch(url, options). Les options dont la méthode sont facultatives
 
+// GET
 // Fonction pour consulter une blague avec un numéro
-getJokeBtn.addEventListener("click", async () => {
+lotteryJokeBtn.addEventListener("click", async () => {
   const jokeId = jokeIdInput.value;
   try {
     const response = await fetch(`http://localhost:5007/jokes/${jokeId}`);
     const data = await response.json();
+
     if (data.id) {
-      jokeResult.textContent = `${data.question} - ${data.answer}`;
+      lotteryJokeContent.textContent = `${data.question} - ${data.answer}`;
+      lotteryJokeContent.style.display = 'flex';
     } else {
-      jokeResult.textContent =
-        "Blague introuvable. Assurez-vous d'entrer un ID valide.";
+      lotteryJokeContent.textContent =
+        "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";
     }
   } catch (error) {
-    jokeResult.textContent = "Une erreur est survenue, réessayez plus tard.";
+    lotteryJokeContent.textContent =
+      "Une erreur est survenue, réessaye plus tard.";
   }
 });
 
+// POST
 // Fonction pour ajouter une blague
 addJokeBtn.addEventListener("click", async () => {
   const question = jokeQuestionInput.value;
   const answer = jokeAnswerInput.value;
 
   if (!question || !answer) {
-    alert("Veuillez entrer une question et une réponse.");
+    alert("Tous les champs doivent être remplis.");
     return;
   }
 
@@ -56,16 +69,16 @@ addJokeBtn.addEventListener("click", async () => {
     const response = await fetch("http://localhost:5007/jokes", {
       method: "POST",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", // indique que le corps de la requête est en format JSON
       },
-      body: JSON.stringify(joke),
+      body: JSON.stringify(joke), // objet joke converti en chaîne JSON pour pouvoir être envoyé dans le corps de la requête
     });
-    const data = await response.json();
+    // const data = await response.json();
     alert("Blague ajoutée avec succès !");
     jokeQuestionInput.value = "";
     jokeAnswerInput.value = "";
   } catch (error) {
-    alert("Une erreur est survenue, réessayez plus tard.");
+    alert("Une erreur est survenue, réessaye plus tard.");
   }
 });
 
@@ -75,19 +88,15 @@ async function loadAllJokes() {
       allJokesTable.innerHTML = "";
       jokesTableVisible = false;
       allJokesBtn.textContent = "Découvrir toutes les blagues Carambar";
-      console.log(jokesTableVisible);
     } else {
       jokesTableVisible = true;
-      console.log(jokesTableVisible);
       allJokesBtn.textContent = "Masquer toutes les blagues Carambar";
 
       const response = await fetch("http://localhost:5007/jokes");
-      const jokes = await response.json();
+      const jokes = await response.json(); // tableau d'objets, ou chaque objet est une blague
 
-      // Clear the table
       allJokesTable.innerHTML = "";
 
-      // Add jokes to the table
       jokes.forEach((joke) => {
         const row = document.createElement("tr");
         row.innerHTML = `                    
@@ -98,10 +107,7 @@ async function loadAllJokes() {
       });
     }
   } catch (error) {
-    console.error("Erreur au chargement des blagues:", error);
-    alert(
-      "Erreur au chargement des blagues. Voir la console pour plus de détails."
-    );
+    alert("Une erreur est survenue, réessaye plus tard.");
   }
 }
 
