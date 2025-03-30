@@ -197,6 +197,7 @@ footer {
   font-size: 1rem;
   p {
     color: white;
+    margin-bottom: 0;
   }
 }
 
@@ -240,4 +241,78 @@ th {
 }
 tr:nth-child(even) {
   background-color: #f9f9f9;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  #welcomePicLeft {
+    display: none;
+  }
+
+  #welcomePicRight {
+    width: 50%;
+  }
+
+  #mission {
+    flex-direction: column;
+    align-items: center;
+    h1 {
+      margin-top: 30px;
+    }
+  }
+
+  #missionText {
+    text-align: center;
+    padding: 10px;
+  }
+
+  #randomJoke,
+  #lotteryJoke,
+  #addJoke,
+  #allJokes {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .joke-img {
+    width: 200px;
+  }
+
+  input {
+    width: 90%;
+  }
+
+  button {
+    width: 90%;
+    padding: 15px;
+  }
+
+  #allJokes{
+    .joke-img {
+      display: none;
+    }
+  }
+
+  footer {
+    padding: 10px;
+  }
 }
