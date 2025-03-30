@@ -2,36 +2,35 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  color: #011f5d;
 }
 
 h1 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-}
-
-h2 {
   font-size: 2rem;
   margin-bottom: 20px;
 }
 
-h3 {
+h2 {
   font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 1.25rem;
   /* margin-bottom: 20px; */
 }
 
 p {
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bolder;
   margin-bottom: 10px;
 }
 
 #pEndAllJokes {
-  font-size: 1.5rem;
+  font-size: 1.25rem;
 }
 
 section {
-  /* background-color: #e10179;
-  color: white; */
   min-height: 70vh;
 }
 
@@ -44,29 +43,117 @@ body {
 
 header {
   width: 100%;
-  background-color: #e10179;
-  color: white;
+  /* background-color: #e10179; */
   /* color: black; */
+  background-color: #fedb27;
+  color: white;
   text-align: center;
-  padding: 40px;
-  margin-bottom: 40px;
-}
-
-#mission h2 {
-  color: #e10179;
-}
-
-div {
+  padding: 30px;
+  /* margin-bottom: 40px; */
   display: flex;
-  flex-direction: column;
   align-items: center;
-  gap: 20px;
-  margin-bottom: 40px;
+  gap: 10px;
+  justify-content: center;
+  /* h1 {
+    margin-bottom: 0;
+  } */
+}
+
+#headerLogo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 0;
+  img {
+    width: 100%;
+  }
+}
+
+#welcomePicRight {
+  width: 250px;
+  height: auto;
+  margin-bottom: 0;
+  img {
+    width: 100%;
+  }
+}
+
+#welcomePicLeft {
+  width: 280px;
+  height: auto;
+  margin-bottom: 0;
+  padding: 20px;
+  img {
+    width: 100%;
+  }
+}
+
+#mission {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #e10179;
+
+  div {
+    gap: 0px;
+    margin-bottom: 0;
+  }
+
+  h1 {
+    color: white;
+  }
+
+  span {
+    color: #fedb27;
+  }
+
+  h2 {
+    color: white;
+  }
+
+  p {
+    align-self: flex-start;
+    font-weight: lighter;
+    color: white;
+  }
+}
+
+#randomJoke,
+#lotteryJoke,
+#addJoke,
+#allJokes {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  border-bottom: 3px dashed #e10179;
+  /* border-spacing: 6px; */
+  padding: 40px;
+  div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    /* margin-bottom: 40px; */
+  }
+  .joke-img {
+    width: 250px;
+    height: auto;
+    padding: 20px;
+    img {
+      width: 100%;
+    }
+  }
+}
+
+#allJokes {
+  border: none;
 }
 
 button {
   background-color: #fedb27;
-  color: black;
+  color: #e10179;
   padding: 20px 30px;
   border: none;
   border-radius: 50px;
@@ -79,8 +166,15 @@ button {
 
 button:hover {
   background-color: #fedb27;
-  color: black;
+  color: #e10179;
   transform: scale(1.1); /* + grand de 10% */
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
 }
 
 input {
@@ -99,8 +193,11 @@ footer {
   padding: 40px;
 }
 
-footer p {
+footer {
   font-size: 1rem;
+  p {
+    color: white;
+  }
 }
 
 footer a {
@@ -120,7 +217,7 @@ footer a:hover {
 .jokeContent {
   background-color: #38ace3;
   color: white;
-  font-size: 1.2rem;
+  font-size: 1rem;
   font-weight: bold;
   padding: 20px;
   border: none;
@@ -130,6 +227,7 @@ footer a:hover {
 table {
   max-width: 100%;
   border-collapse: collapse;
+  padding: 20px;
 }
 th,
 td {

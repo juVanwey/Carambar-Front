@@ -13,78 +13,106 @@
 
   <body>
     <header>
-      <h1>Bienvenue chez Carambar & co</h1>
-      <h2>Carambar, c'est de la barre</h2>
-      <!-- <div>
-        <img src="./assets/logo-rose.png" alt="">
-      </div> -->
+      <!-- <h1>Bienvenue chez</h1> -->
+      <!-- <h2>Carambar, c'est de la barre</h2> -->
+      <div id="headerLogo">
+        <!-- <img src="./assets/whitelogo.png" alt="" /> -->
+        <img src="./assets/pinkLogo.png" alt="" />
+      </div>
     </header>
 
     <main>
       <section>
         <div id="mission">
-          <h2>Notre mission, c'est te donner le sourire !</h2>
-          <p>
-            Eh oui, ici on cultive le plaisir de sourire ! Tu veux un peu de fun
-            au quotidien ? Tu veux pimper tes soirées ? Amuse-toi avec nos
-            blagues !
-          </p>
-          <!-- <div>
-            <img src="./assets/photo-accueil.webp" alt="">
-          </div> -->
+          <div id="welcomePicLeft">
+            <img src="./assets/carambar2.webp" alt="" />
+          </div>
+          <div id="missionText">
+            <h1>Bienvenue chez <span id="carambarH1">Carambar & co</span></h1>
+            <h2>Notre mission, c'est te donner le sourire !</h2>
+            <p>
+              Eh oui, ici on cultive le plaisir de sourire !<br />Tu veux un peu
+              de fun au quotidien ?<br />Tu veux pimper tes soirées ?<br />Amuse-toi
+              avec nos blagues !
+            </p>
+          </div>
+          <div id="welcomePicRight">
+            <img src="./assets/welcomePic.webp" alt="" />
+          </div>
         </div>
 
-        <div id="randomJoke">
-          <h3>Régale toi en tirant une blague au hasard !</h3>
-          <button id="randomJokeBtn">Tirer une blague aléatoire</button>
-          <p id="randomJokeContent" class="jokeContent">
-            Ici apparaîtra la blague !
-          </p>
-          <!-- Le p sera remplacé par la blague tirée -->
-        </div>
+        <article id="randomJoke">
+          <div class="joke-img">
+            <img src="./assets/carambar.webp" alt="" />
+          </div>
+          <div>
+            <h3>Régale-toi en tirant une blague au hasard !</h3>
+            <button id="randomJokeBtn">Tirer une blague aléatoire</button>
+            <p id="randomJokeContent" class="jokeContent">
+              Ici apparaîtra la blague !
+            </p>
+          </div>
+        </article>
 
-        <div id="lotteryJoke">
-          <h3>Tire une blague selon un nombre, comme au loto !</h3>
-          <input
-            type="number"
-            id="jokeIdInput"
-            placeholder="Entre un nombre ici"
-          />
-          <button id="lotteryJokeBtn">Consulter la blague</button>
-          <p id="lotteryJokeContent" class="jokeContent">
-            Ici apparaîtra la blague !
-          </p>
-        </div>
+        <article id="lotteryJoke">
+          <div>
+            <h3>Tire une blague selon un nombre, comme au loto !</h3>
+            <input
+              type="number"
+              id="jokeIdInput"
+              placeholder="Entre un nombre ici"
+            />
+            <button id="lotteryJokeBtn">Consulter la blague</button>
+            <p id="lotteryJokeContent" class="jokeContent">
+              Ici apparaîtra la blague !
+            </p>
+          </div>
+          <div class="joke-img">
+            <img src="./assets/mabulle.webp" alt="" />
+          </div>
+        </article>
 
-        <div id="addJoke">
-          <h3>
-            Tu veux surprendre la communauté Carambar & co avec une blague ?
-            C'est par ici !
-          </h3>
-          <input
-            type="text"
-            id="jokeQuestionInput"
-            placeholder="Entre ta devinette"
-          />
-          <input
-            type="text"
-            id="jokeAnswerInput"
-            placeholder="Entre la réponse"
-          />
-          <button id="addJokeBtn">Ajouter ma blague</button>
-        </div>
+        <article id="addJoke">
+          <div class="joke-img">
+            <img src="./assets/blueCarambar.webp" alt="" />
+          </div>
+          <div>
+            <h3>
+              Tu veux surprendre la communauté Carambar & co avec une blague ?
+              C'est par ici !
+            </h3>
+            <form action="">
+              <input
+                type="text"
+                id="jokeQuestionInput"
+                placeholder="Entre ta devinette"
+              />
+              <input
+                type="text"
+                id="jokeAnswerInput"
+                placeholder="Entre la réponse"
+              />
+            </form>
+            <button id="addJokeBtn">Ajouter ma blague</button>
+          </div>
+        </article>
 
-        <div id="allJokes">
-          <h3>
-            Un voyage à l'autre bout du monde, plus de connexion... Carambar &
-            co t'accompagne !
-          </h3>
-          <button id="allJokesBtn">
-            Découvrir toutes les blagues Carambar
-          </button>
-          <p id="pEndAllJokes">À emporter partout !</p>
-          <table id="allJokesTable"></table>
-        </div>
+        <article id="allJokes">
+          <div>
+            <h3>
+              Un voyage à l'autre bout du monde, plus de connexion... Carambar &
+              co t'accompagne !
+            </h3>
+            <button id="allJokesBtn">
+              Découvrir toutes les blagues Carambar
+            </button>
+            <p id="pEndAllJokes">À emporter partout !</p>
+            <table id="allJokesTable"></table>
+          </div>
+          <div class="joke-img">
+            <img src="./assets/malabar.webp" alt="" />
+          </div>
+        </article>
       </section>
     </main>
 
