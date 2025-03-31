@@ -17,12 +17,15 @@ let jokesTableVisible = false; // initiée à false car table de blagues caché 
 // Fonction pour obtenir une blague aléatoire
 randomJokeBtn.addEventListener("click", async () => {
   try {
-    const response = await fetch("https://carambar-gmqo.onrender.com/jokes/random");
+    const response = await fetch(
+      "https://carambar-gmqo.onrender.com/jokes/random"
+    );
     // response => objet qui contient des informations sur la réponse HTTP reçue du serveur comme le HTTP status (200 pour une requête réussie par ex), les headers, le body (ex : données JSON)
     const data = await response.json();
     // data => objet
-    randomJokeContent.textContent = `${data.question} - ${data.answer}`;
-    randomJokeContent.style.display = 'flex';
+    // randomJokeContent.textContent = `${data.question} - ${data.answer}`;
+    randomJokeContent.innerHTML = `<p class="question">${data.question}</p> <p class="answer">${data.answer}</p>`;
+    randomJokeContent.style.display = "flex";
   } catch (error) {
     randomJokeContent.textContent =
       "Une erreur est survenue, réessaye plus tard.";
@@ -36,12 +39,15 @@ randomJokeBtn.addEventListener("click", async () => {
 lotteryJokeBtn.addEventListener("click", async () => {
   const jokeId = jokeIdInput.value;
   try {
-    const response = await fetch(`https://carambar-gmqo.onrender.com/jokes/${jokeId}`);
+    const response = await fetch(
+      `https://carambar-gmqo.onrender.com/jokes/${jokeId}`
+    );
     const data = await response.json();
 
     if (data.id) {
-      lotteryJokeContent.textContent = `${data.question} - ${data.answer}`;
-      lotteryJokeContent.style.display = 'flex';
+      // lotteryJokeContent.textContent = `${data.question} - ${data.answer}`;
+      lotteryJokeContent.innerHTML = `<p class="question">${data.question}</p> <p class="answer">${data.answer}</p>`;
+      lotteryJokeContent.style.display = "flex";
     } else {
       lotteryJokeContent.textContent =
         "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";

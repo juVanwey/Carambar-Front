@@ -22,7 +22,7 @@ h3 {
 
 p {
   font-size: 1rem;
-  font-weight: bolder;
+  font-weight: bold;
   margin-bottom: 10px;
 }
 
@@ -223,6 +223,18 @@ footer a:hover {
   padding: 20px;
   border: none;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+}
+
+.question {
+  font-weight: bold;
+  color: white;
+}
+
+.answer {
+  font-size: 0.75rem;
+  margin-bottom: 0;
 }
 
 table {
