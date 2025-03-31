@@ -36,43 +36,16 @@ randomJokeBtn.addEventListener("click", async () => {
 
 // GET
 // Fonction pour consulter une blague avec un numéro
-// lotteryJokeBtn.addEventListener("click", async () => {
-//   const jokeId = jokeIdInput.value;
-//   try {
-//     const response = await fetch(
-//       `https://carambar-gmqo.onrender.com/jokes/${jokeId}`
-//     );
-//     const data = await response.json();
-
-//     if (data.id) {
-//       // lotteryJokeContent.textContent = `${data.question} - ${data.answer}`;
-//       lotteryJokeContent.innerHTML = `<p class="question">${data.question}</p> <p class="answer">${data.answer}</p>`;
-//       lotteryJokeContent.style.display = "flex";
-//     } else {
-//       lotteryJokeContent.textContent =
-//         "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";
-//     }
-//   } catch (error) {
-//     lotteryJokeContent.textContent =
-//       "Une erreur est survenue, réessaye plus tard.";
-//   }
-// });
-
 lotteryJokeBtn.addEventListener("click", async () => {
   const jokeId = jokeIdInput.value;
   try {
     const response = await fetch(
       `https://carambar-gmqo.onrender.com/jokes/${jokeId}`
     );
-
-    // Vérifie si la réponse est ok (status code 200)
-    if (!response.ok) {
-      throw new Error("ID non trouvé");
-    }
-
     const data = await response.json();
 
     if (data.id) {
+      // lotteryJokeContent.textContent = `${data.question} - ${data.answer}`;
       lotteryJokeContent.innerHTML = `<p class="question">${data.question}</p> <p class="answer">${data.answer}</p>`;
       lotteryJokeContent.style.display = "flex";
     } else {
@@ -80,16 +53,10 @@ lotteryJokeBtn.addEventListener("click", async () => {
         "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";
     }
   } catch (error) {
-    if (error.message === "ID non trouvé") {
-      lotteryJokeContent.textContent =
-        "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";
-    } else {
-      lotteryJokeContent.textContent =
-        "Une erreur est survenue, réessaye plus tard.";
-    }
+    lotteryJokeContent.textContent =
+      "Une erreur est survenue, réessaye plus tard.";
   }
 });
-
 
 // POST
 // Fonction pour ajouter une blague
