@@ -54,7 +54,8 @@ lotteryJokeBtn.addEventListener("click", async () => {
     }
   } catch (error) {
     lotteryJokeContent.textContent =
-      "Une erreur est survenue, réessaye plus tard.";
+      // "Une erreur est survenue, réessaye plus tard.";
+      "Pas encore de blague sous ce numéro. N'hésite pas à ajouter des blagues plus bas sur cette page !";
   }
 });
 
